@@ -18,7 +18,7 @@ DSTNet+ is an extension of [DSTNet](https://github.com/xuboming8/DSTNet).
 
 ---
 ### Results
-- **Model efficiency**
+- **Model efficiency** (PSNR vs. Runtime vs. Params) 
 <img width="770" src="figs/runtime.png"> 
 
 - **Quantitative evaluations** <br>
