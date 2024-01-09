@@ -15,7 +15,8 @@ DSTNet+ is an extension of [DSTNet](https://github.com/xuboming8/DSTNet).
 ---
 ### Update
 - **2023.01.08**: This repo is created.
-  
+
+---
 ### Results
 - **Model efficiency**
 <img width="770" src="figs/runtime.png"> 
