@@ -17,8 +17,8 @@ DSTNet+ is an extension of [DSTNet](https://github.com/xuboming8/DSTNet).
 - **Model efficiency**
 <img width="770" src="figs/runtime.png"> 
 
-- **Quantitative evaluations**
-<img width="360" src="figs/table_gopro.png">   <img width="350" src="figs/table_dvd.png"> 
+- **Quantitative evaluations** <br>
+<img width="370" src="figs/table_gopro.png">  <img width="360" src="figs/table_dvd.png"> 
 
 - Deblurred results on **GoPro** dataset
 <img width="780" src="figs/gopro.png">
