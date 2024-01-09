@@ -27,6 +27,6 @@ DSTNet+ is an extension of [DSTNet](https://github.com/xuboming8/DSTNet).
 - Deblurred results on **DVD** dataset
 <img width="780" src="figs/dvd.png">
 
-- Deblurred results on **Real-world** blurry images
+- Deblurred results on **Real-world** blurry frames
 <img width="800" src="figs/real_world.png">
 
