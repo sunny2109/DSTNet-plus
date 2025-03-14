@@ -14,6 +14,7 @@ DSTNet+ is an extension of [DSTNet](https://github.com/xuboming8/DSTNet).
 
 ---
 ### Update
+- **2025.03.14**: This paper is accepted by TPAMI.
 - **2024.01.08**: This repo is created.
 
 ---
