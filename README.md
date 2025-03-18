@@ -35,3 +35,17 @@ DSTNet+ is an extension of [DSTNet](https://github.com/xuboming8/DSTNet).
 - Deblurred results on **Real-world** blurry frames
 <img width="800" src="figs/real_world.png">
 
+
+## 📧 Contact
+If you have any questions, please feel free to reach us out at cs.longsun@gmail.com
+
+## 📎 Citation 
+
+If you find our work helpful for your research, please consider giving a star ⭐ and citation 📝 
+```bibtex
+@article{RDG,
+  title={Learning Efficient Deep Discriminative Spatial and Temporal Networks for Video Deblurring},
+  author={Pan, Jinshan and Sun, Long and Xu Boming and Dong, Jiangxin and Tang, Jinhui},
+  journal={CVPR},
+  year={2025}
+}
