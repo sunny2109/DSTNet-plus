@@ -8,13 +8,14 @@
 > [IMAG Lab](https://imag-njust.net/), Nanjing University of Science and Technology
 
 ---
-This repo is a official implementation of "[Learning Efficient Deep Discriminative Spatial and Temporal Networks for Video Deblurring]()".
+This repo is a official implementation of "[Learning Efficient Deep Discriminative Spatial and Temporal Networks for Video Deblurring](https://github.com/sunny2109/DSTNet-plus/blob/main/figs/DstNetPlus_Manuscript.pdf)".
 
 DSTNet+ is an extension of [DSTNet](https://github.com/xuboming8/DSTNet).
 
 
 ## 📜 News
 - **2025.03.25**: All pretrained models and visual results are available.
+- **2025.03.25**: The paper can be found [here](https://github.com/sunny2109/DSTNet-plus/blob/main/figs/DstNetPlus_Manuscript.pdf).
 - **2025.03.14**: This paper is accepted by TPAMI.
 - **2024.01.08**: This repo is created.
 
@@ -80,7 +81,7 @@ python basicsr/test.py -opt options/test/test_base_GoPro.yml
 
 
 ## 👀 Results
-We achieve SOTA performance on a set of blurring datasets. Detailed results can be found in the paper. All visual results of DSTNetPlus can be downloaded [here](https://drive.google.com/drive/folders/1ZMaZyCer44ZX6tdcDmjIrc_hSsKoMKg2?usp=drive_link).
+We achieve SOTA performance on a set of blurring datasets. Detailed results can be found in the paper. All visual results of DSTNetPlus can be downloaded [here](https://huggingface.co/Meloo/DSTNetPlus/tree/main/visual_results).
 
 <details>
 <summary>Click to expand</summary>
