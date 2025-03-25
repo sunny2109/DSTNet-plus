@@ -1,13 +1,11 @@
 ### 📖 Learning Efficient Deep Discriminative Spatial and Temporal Networks for Video Deblurring
-> <a href="https://colab.research.google.com/drive/19DdsNFeOYR8om8QCCi9WWzr_WkWTLHZd?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="google colab logo"></a> 
+
 [![Hugging Face Models](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Models-blue)](https://huggingface.co/Meloo/DSTNetPlus)
 [![download](https://img.shields.io/github/downloads/sunny2109/DSTNet-plus/total.svg)](https://github.com/sunny2109/DSTNet-plus/releases)
 ![visitors](https://visitor-badge.laobi.icu/badge?page_id=sunny2109/DSTNet-plus) 
 
-
 > [Jinshan Pan](https://jspan.github.io/), [Long Sun](https://github.com/sunny2109), [Boming Xu](https://github.com/xuboming8), [Jiangxin Dong](https://scholar.google.com/citations?user=ruebFVEAAAAJ&hl=zh-CN&oi=ao), and [Jinhui Tang](https://scholar.google.com/citations?user=ByBLlEwAAAAJ&hl=zh-CN)<br>
 > [IMAG Lab](https://imag-njust.net/), Nanjing University of Science and Technology
-
 
 ---
 This repo is a official implementation of "[Learning Efficient Deep Discriminative Spatial and Temporal Networks for Video Deblurring]()".
@@ -16,6 +14,7 @@ DSTNet+ is an extension of [DSTNet](https://github.com/xuboming8/DSTNet).
 
 
 ## 📜 News
+- **2025.03.25**: All pretrained models and visual results are available.
 - **2025.03.14**: This paper is accepted by TPAMI.
 - **2024.01.08**: This repo is created.
 
@@ -44,10 +43,10 @@ Used training and testing sets can be downloaded as follows:
 
 | Training Set     |  Pretrained model  | Visual Result  |
 | :----------      | :-------------: | :--------------: |
-| [GoPro](http://data.cv.snu.ac.kr:8008/webdav/dataset/GOPRO/GOPRO_Large.zip)                               | [Github](https://github.com/sunny2109/DSTNet-plus/releases/tag/v0.1.0) or [Baidu Cloud](https://pan.baidu.com/s/19RyEG_LupAsfwpKYx-F9cA?pwd=DSTP) | [Baidu Cloud](https://pan.baidu.com/s/15qSS5Hcsiu0y0-e3zsC3FQ?pwd=DSTP) |
-| [DVD](http://www.cs.ubc.ca/labs/imager/tr/2017/DeepVideoDeblurring/DeepVideoDeblurring_Dataset.zip)       | [Github](https://github.com/sunny2109/DSTNet-plus/releases/tag/v0.1.0) or [Baidu Cloud](https://pan.baidu.com/s/19RyEG_LupAsfwpKYx-F9cA?pwd=DSTP) | [Baidu Cloud](https://pan.baidu.com/s/15qSS5Hcsiu0y0-e3zsC3FQ?pwd=DSTP) |
-| [BSD](https://drive.google.com/file/d/1VJdyojIAriC5QZp2N_0umEqkIMk1_9HA/view?usp=sharing)                 | [Github](https://github.com/sunny2109/DSTNet-plus/releases/tag/v0.1.0) or [Baidu Cloud](https://pan.baidu.com/s/19RyEG_LupAsfwpKYx-F9cA?pwd=DSTP) | [Baidu Cloud](https://pan.baidu.com/s/15qSS5Hcsiu0y0-e3zsC3FQ?pwd=DSTP) |
-| [DAVIS-2017](https://data.vision.ee.ethz.ch/csergi/share/davis/DAVIS-2017-Unsupervised-trainval-480p.zip) | [Github](https://github.com/sunny2109/DSTNet-plus/releases/tag/v0.1.0) or [Baidu Cloud](https://pan.baidu.com/s/19RyEG_LupAsfwpKYx-F9cA?pwd=DSTP) | [Baidu Cloud](https://pan.baidu.com/s/15qSS5Hcsiu0y0-e3zsC3FQ?pwd=DSTP) |
+| [GoPro](http://data.cv.snu.ac.kr:8008/webdav/dataset/GOPRO/GOPRO_Large.zip)                               | [Hugging Face](https://huggingface.co/Meloo/DSTNetPlus/tree/main) \| [Github](https://github.com/sunny2109/DSTNet-plus/releases/tag/v0.1.0) \| [Baidu Cloud](https://pan.baidu.com/s/19RyEG_LupAsfwpKYx-F9cA?pwd=DSTP) | [Hugging Face](https://huggingface.co/Meloo/DSTNetPlus/tree/main) or [Baidu Cloud](https://pan.baidu.com/s/15qSS5Hcsiu0y0-e3zsC3FQ?pwd=DSTP) |
+| [DVD](http://www.cs.ubc.ca/labs/imager/tr/2017/DeepVideoDeblurring/DeepVideoDeblurring_Dataset.zip)       | [Hugging Face](https://huggingface.co/Meloo/DSTNetPlus/tree/main) \| [Github](https://github.com/sunny2109/DSTNet-plus/releases/tag/v0.1.0) \| [Baidu Cloud](https://pan.baidu.com/s/19RyEG_LupAsfwpKYx-F9cA?pwd=DSTP) | [Hugging Face](https://huggingface.co/Meloo/DSTNetPlus/tree/main) or [Baidu Cloud](https://pan.baidu.com/s/15qSS5Hcsiu0y0-e3zsC3FQ?pwd=DSTP) |
+| [BSD](https://drive.google.com/file/d/1VJdyojIAriC5QZp2N_0umEqkIMk1_9HA/view?usp=sharing)                 | [Hugging Face](https://huggingface.co/Meloo/DSTNetPlus/tree/main) \| [Github](https://github.com/sunny2109/DSTNet-plus/releases/tag/v0.1.0) \| [Baidu Cloud](https://pan.baidu.com/s/19RyEG_LupAsfwpKYx-F9cA?pwd=DSTP) | [Hugging Face](https://huggingface.co/Meloo/DSTNetPlus/tree/main) or [Baidu Cloud](https://pan.baidu.com/s/15qSS5Hcsiu0y0-e3zsC3FQ?pwd=DSTP) |
+| [DAVIS-2017](https://data.vision.ee.ethz.ch/csergi/share/davis/DAVIS-2017-Unsupervised-trainval-480p.zip) | [Hugging Face](https://huggingface.co/Meloo/DSTNetPlus/tree/main) \| [Github](https://github.com/sunny2109/DSTNet-plus/releases/tag/v0.1.0) \| [Baidu Cloud](https://pan.baidu.com/s/19RyEG_LupAsfwpKYx-F9cA?pwd=DSTP) | [Hugging Face](https://huggingface.co/Meloo/DSTNetPlus/tree/main) or [Baidu Cloud](https://pan.baidu.com/s/15qSS5Hcsiu0y0-e3zsC3FQ?pwd=DSTP) |
 
 
 ### 3. Run the training code
