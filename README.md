@@ -80,22 +80,52 @@ python basicsr/test.py -opt options/test/test_base_GoPro.yml
 
 
 ## 👀 Results
+We achieve SOTA performance on a set of blurring datasets. Detailed results can be found in the paper. All visual results of DSTNetPlus can be downloaded [here](https://drive.google.com/drive/folders/1ZMaZyCer44ZX6tdcDmjIrc_hSsKoMKg2?usp=drive_link).
+
+<details>
+<summary>Click to expand</summary>
+
 - **Model efficiency** (PSNR vs. Runtime vs. Params) 
-<img width="770" src="figs/runtime.png"> 
+<p align="center">
+<img width="800" src="figs/runtime.png"> 
+</p>
 
 - **Quantitative evaluations** <br>
-&emsp;    &emsp;   &emsp; &emsp;    &emsp;Evaluation on **GoPro** dataset  &emsp;    &emsp;   &emsp;  &emsp;    &emsp;   &emsp;  &emsp; Evaluation on **DVD** dataset <br>
-<img width="380" src="figs/table_gopro.png">  <img width="330" src="figs/table_dvd.png"> 
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;    &emsp;   &emsp; &emsp;    &emsp;Evaluation on **GoPro** dataset  &emsp;    &emsp;   &emsp;  &emsp;    &emsp;  &emsp;&emsp;&emsp;&emsp;&emsp; &emsp;  &emsp; Evaluation on **DVD** dataset <br>
+
+<p align="center">
+ &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <img width="380" src="figs/table_gopro.png">  &emsp;&emsp;&emsp;
+ <img width="335" src="figs/table_dvd.png"> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+</p>
+
+  
+
+- Quantitative evaluations on the BSD dataset
+<p align="center">
+  <img width="800" src="figs/table_bsd.png">
+</p>
+
+- Quantitative evaluations on the Set8 dataset
+<p align="center">
+  <img width="800" src="figs/table_set8.png">
+</p>
+
 
 - Deblurred results on **GoPro** dataset
-<img width="780" src="figs/gopro.png">
+<p align="center">
+<img width="800" src="figs/gopro.png">
+</p>
 
 - Deblurred results on **DVD** dataset
-<img width="780" src="figs/dvd.png">
+<p align="center">
+<img width="800" src="figs/dvd.png">
+</p>
 
 - Deblurred results on **Real-world** blurry frames
+<p align="center">
 <img width="800" src="figs/real_world.png">
-
+</p>
+</details>
 
 ## 📧 Contact
 If you have any questions, please feel free to reach us out at cs.longsun@gmail.com
