@@ -92,10 +92,10 @@ We achieve SOTA performance on a set of blurring datasets. Detailed results can 
 </p>
 
 - **Quantitative evaluations** <br>
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Evaluation on **GoPro** dataset  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Evaluation on **DVD** dataset <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Evaluation on **GoPro** dataset  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp Evaluation on **DVD** dataset <br>
 <p align="center">
- &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <img width="370" src="figs/table_gopro.png">  &emsp;&emsp;
- <img width="320" src="figs/table_dvd.png"> &emsp;&emsp;&emsp;&emsp;&emsp;
+ &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <img width="360" src="figs/table_gopro.png">  &emsp;&emsp;
+ <img width="310" src="figs/table_dvd.png"> &emsp;&emsp;&emsp;&emsp;&emsp;
 </p>
 
   
