@@ -97,16 +97,9 @@ We achieve SOTA performance on a set of blurring datasets. Detailed results can 
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Evaluation on **GoPro** dataset  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Evaluation on **DVD** dataset <br>
 
 <p align="center">
- &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <img width="370" src="figs/table_gopro.png">  &emsp;&emsp;
- <img width="325" src="figs/table_dvd.png"> &emsp;&emsp;&emsp;&emsp;&emsp;
-=======
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Evaluation on **GoPro** dataset  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Evaluation on **DVD** dataset <br>
-<p align="center">
- &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <img width="360" src="figs/table_gopro.png">  &emsp;&emsp;
- <img width="310" src="figs/table_dvd.png"> &emsp;&emsp;&emsp;&emsp;&emsp;
->>>>>>> bb13a918026d89159611ee44263cd1686000f181
+    <img width="370" src="figs/table_gopro.png"> 
+    <img width="325" src="figs/table_dvd.png"
 </p>
-
   
 
 - Quantitative evaluations on the BSD dataset
