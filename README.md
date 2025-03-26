@@ -1,4 +1,4 @@
-### 📖 Learning Efficient Deep Discriminative Spatial and Temporal Networks for Video Deblurring
+## 📖 Learning Efficient Deep Discriminative Spatial and Temporal Networks for Video Deblurring
 
 [![Hugging Face Models](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Models-blue)](https://huggingface.co/Meloo/DSTNetPlus)
 [![download](https://img.shields.io/github/downloads/sunny2109/DSTNet-plus/total.svg)](https://github.com/sunny2109/DSTNet-plus/releases)
@@ -96,11 +96,18 @@ We achieve SOTA performance on a set of blurring datasets. Detailed results can 
 </p>
 
 - **Quantitative evaluations** <br>
+<<<<<<< HEAD
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;Evaluation on **GoPro** dataset  &emsp;    &emsp;   &emsp;  &emsp;    &emsp;  &emsp;&emsp;&emsp;&emsp;&emsp; Evaluation on **DVD** dataset <br>
 
 <p align="center">
  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <img width="370" src="figs/table_gopro.png">  &emsp;&emsp;
  <img width="325" src="figs/table_dvd.png"> &emsp;&emsp;&emsp;&emsp;&emsp;
+=======
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Evaluation on **GoPro** dataset  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Evaluation on **DVD** dataset <br>
+<p align="center">
+ &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <img width="360" src="figs/table_gopro.png">  &emsp;&emsp;
+ <img width="310" src="figs/table_dvd.png"> &emsp;&emsp;&emsp;&emsp;&emsp;
+>>>>>>> bb13a918026d89159611ee44263cd1686000f181
 </p>
 
   
