@@ -82,8 +82,6 @@ python merge_full.py
 - The test results will be in './results'.
 
 
-
-
 ## 👀 Results
 We achieve SOTA performance on a set of blurring datasets. Detailed results can be found in the paper. All visual results of DSTNetPlus can be downloaded [here](https://huggingface.co/Meloo/DSTNetPlus/tree/main/visual_results).
 
@@ -96,7 +94,6 @@ We achieve SOTA performance on a set of blurring datasets. Detailed results can 
 </p>
 
 - **Quantitative evaluations** <br>
-<<<<<<< HEAD
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;Evaluation on **GoPro** dataset  &emsp;    &emsp;   &emsp;  &emsp;    &emsp;  &emsp;&emsp;&emsp;&emsp;&emsp; Evaluation on **DVD** dataset <br>
 
 <p align="center">
