@@ -76,8 +76,12 @@ Please download the test dataset and put it in `./datasets/`.
 - Run the following commands:
 ```
 python basicsr/test.py -opt options/test/test_base_GoPro.yml
+cd results
+python merge_full.py
 ```
 - The test results will be in './results'.
+
+
 
 
 ## 👀 Results
@@ -92,11 +96,11 @@ We achieve SOTA performance on a set of blurring datasets. Detailed results can 
 </p>
 
 - **Quantitative evaluations** <br>
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp; &emsp; &emsp;    &emsp;Evaluation on **GoPro** dataset  &emsp;    &emsp;   &emsp;  &emsp;    &emsp;  &emsp;&emsp;&emsp;&emsp;&emsp; &emsp;  &emsp; Evaluation on **DVD** dataset <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;Evaluation on **GoPro** dataset  &emsp;    &emsp;   &emsp;  &emsp;    &emsp;  &emsp;&emsp;&emsp;&emsp;&emsp; Evaluation on **DVD** dataset <br>
 
 <p align="center">
  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <img width="370" src="figs/table_gopro.png">  &emsp;&emsp;
- <img width="330" src="figs/table_dvd.png"> &emsp;&emsp;&emsp;&emsp;&emsp;
+ <img width="325" src="figs/table_dvd.png"> &emsp;&emsp;&emsp;&emsp;&emsp;
 </p>
 
   
