@@ -8,7 +8,7 @@
 > [IMAG Lab](https://imag-njust.net/), Nanjing University of Science and Technology
 
 ---
-This repo is a official implementation of "[Learning Efficient Deep Discriminative Spatial and Temporal Networks for Video Deblurring](https://github.com/sunny2109/DSTNet-plus/blob/main/figs/DstNetPlus_Manuscript.pdf)".
+This repo is a official implementation of "[Learning Efficient Deep Discriminative Spatial and Temporal Networks for Video Deblurring](https://ieeexplore.ieee.org/document/10948572)".
 
 DSTNet+ is an extension of [DSTNet](https://github.com/xuboming8/DSTNet).
 
