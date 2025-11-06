@@ -82,8 +82,6 @@ python merge_full.py
 - The test results will be in './results'.
 
 
-
-
 ## 👀 Results
 We achieve SOTA performance on a set of blurring datasets. Detailed results can be found in the paper. All visual results of DSTNetPlus can be downloaded [here](https://huggingface.co/Meloo/DSTNetPlus/tree/main/visual_results).
 
@@ -96,20 +94,12 @@ We achieve SOTA performance on a set of blurring datasets. Detailed results can 
 </p>
 
 - **Quantitative evaluations** <br>
-<<<<<<< HEAD
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;Evaluation on **GoPro** dataset  &emsp;    &emsp;   &emsp;  &emsp;    &emsp;  &emsp;&emsp;&emsp;&emsp;&emsp; Evaluation on **DVD** dataset <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Evaluation on **GoPro** dataset  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Evaluation on **DVD** dataset <br>
 
 <p align="center">
- &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <img width="370" src="figs/table_gopro.png">  &emsp;&emsp;
- <img width="325" src="figs/table_dvd.png"> &emsp;&emsp;&emsp;&emsp;&emsp;
-=======
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Evaluation on **GoPro** dataset  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Evaluation on **DVD** dataset <br>
-<p align="center">
- &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <img width="360" src="figs/table_gopro.png">  &emsp;&emsp;
- <img width="310" src="figs/table_dvd.png"> &emsp;&emsp;&emsp;&emsp;&emsp;
->>>>>>> bb13a918026d89159611ee44263cd1686000f181
+    <img width="370" src="figs/table_gopro.png"> 
+    <img width="325" src="figs/table_dvd.png"
 </p>
-
   
 
 - Quantitative evaluations on the BSD dataset
