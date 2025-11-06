@@ -1,123 +1,144 @@
-<p align="center">
-  <img src="assets/basicsr_xpixel_logo.png" height=120>
-</p>
+## 📖 Learning Efficient Deep Discriminative Spatial and Temporal Networks for Video Deblurring
 
-## <div align="center"><b><a href="README.md">English</a> | <a href="README_CN.md">简体中文</a></b></div>
+[![Hugging Face Models](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Models-blue)](https://huggingface.co/Meloo/DSTNetPlus)
+[![download](https://img.shields.io/github/downloads/sunny2109/DSTNet-plus/total.svg)](https://github.com/sunny2109/DSTNet-plus/releases)
+![visitors](https://visitor-badge.laobi.icu/badge?page_id=sunny2109/DSTNet-plus) 
 
-<div align="center">
-
-[![LICENSE](https://img.shields.io/github/license/xinntao/basicsr.svg)](https://github.com/xinntao/BasicSR/blob/master/LICENSE.txt)
-[![PyPI](https://img.shields.io/pypi/v/basicsr)](https://pypi.org/project/basicsr/)
-[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/xinntao/BasicSR.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/xinntao/BasicSR/context:python)
-[![python lint](https://github.com/xinntao/BasicSR/actions/workflows/pylint.yml/badge.svg)](https://github.com/xinntao/BasicSR/blob/master/.github/workflows/pylint.yml)
-[![Publish-pip](https://github.com/xinntao/BasicSR/actions/workflows/publish-pip.yml/badge.svg)](https://github.com/xinntao/BasicSR/blob/master/.github/workflows/publish-pip.yml)
-[![gitee mirror](https://github.com/xinntao/BasicSR/actions/workflows/gitee-mirror.yml/badge.svg)](https://github.com/xinntao/BasicSR/blob/master/.github/workflows/gitee-mirror.yml)
-
-</div>
-
-<div align="center">
-
-⚡[**HowTo**](#-HOWTOs) **|** 🔧[**Installation**](docs/INSTALL.md) **|** 💻[**Training Commands**](docs/TrainTest.md) **|** 🐢[**DatasetPrepare**](docs/DatasetPreparation.md) **|** 🏰[**Model Zoo**](docs/ModelZoo.md)
-
-📕[**中文解读文档**](https://github.com/XPixelGroup/BasicSR-docs) **|** 📊 [**Plot scripts**](scripts/plot) **|** 📝[Introduction](docs/introduction.md) **|** <a href="https://github.com/XPixelGroup/BasicSR/tree/master/colab"><img src="https://colab.research.google.com/assets/colab-badge.svg" height="18" alt="google colab logo"></a> **|** ⏳[TODO List](https://github.com/xinntao/BasicSR/projects) **|** ❓[FAQ](docs/FAQ.md)
-</div>
-
-🚀 We add [BasicSR-Examples](https://github.com/xinntao/BasicSR-examples), which provides guidance and templates of using BasicSR as a python package. 🚀 <br>
-📢 **技术交流QQ群**：**320960100** &emsp; 入群答案：**互帮互助共同进步** <br>
-🧭 [入群二维码](#-contact) (QQ、微信) &emsp;&emsp; [入群指南 (腾讯文档)](https://docs.qq.com/doc/DYXBSUmxOT0xBZ05u) <br>
+> [Jinshan Pan](https://jspan.github.io/), [Long Sun](https://github.com/sunny2109), [Boming Xu](https://github.com/xuboming8), [Jiangxin Dong](https://scholar.google.com/citations?user=ruebFVEAAAAJ&hl=zh-CN&oi=ao), and [Jinhui Tang](https://scholar.google.com/citations?user=ByBLlEwAAAAJ&hl=zh-CN)<br>
+> [IMAG Lab](https://imag-njust.net/), Nanjing University of Science and Technology
 
 ---
+This repo is a official implementation of "[Learning Efficient Deep Discriminative Spatial and Temporal Networks for Video Deblurring](https://ieeexplore.ieee.org/document/10948572)".
 
-BasicSR (**Basic** **S**uper **R**estoration) is an open-source **image and video restoration** toolbox based on PyTorch, such as super-resolution, denoise, deblurring, JPEG artifacts removal, *etc*.<br>
-BasicSR (**Basic** **S**uper **R**estoration) 是一个基于 PyTorch 的开源 图像视频复原工具箱, 比如 超分辨率, 去噪, 去模糊, 去 JPEG 压缩噪声等.
+DSTNet+ is an extension of [DSTNet](https://github.com/xuboming8/DSTNet).
 
-🚩 **New Features/Updates**
 
-- ✅ July 26, 2022. Add plot scripts 📊[Plot](scripts/plot).
-- ✅ May 9, 2022. BasicSR joins [XPixel](http://xpixel.group/).
-- ✅ Oct 5, 2021. Add **ECBSR training and testing** codes: [ECBSR](https://github.com/xindongzhang/ECBSR).
-  > ACMMM21: Edge-oriented Convolution Block for Real-time Super Resolution on Mobile Devices
-- ✅ Sep 2, 2021. Add **SwinIR training and testing** codes: [SwinIR](https://github.com/JingyunLiang/SwinIR) by [Jingyun Liang](https://github.com/JingyunLiang). More details are in [HOWTOs.md](docs/HOWTOs.md#how-to-train-swinir-sr)
-- ✅ Aug 5, 2021. Add NIQE, which produces the same results as MATLAB (both are 5.7296 for tests/data/baboon.png).
-- ✅ July 31, 2021. Add **bi-directional video super-resolution** codes: [**BasicVSR** and IconVSR](https://arxiv.org/abs/2012.02181).
-  > CVPR21: BasicVSR: The Search for Essential Components in Video Super-Resolution and Beyond
-- **[More](docs/history_updates.md)**
+## 📜 News
+- **2025.03.25**: All pretrained models and visual results are available.
+- **2025.03.25**: The paper can be found [here](https://github.com/sunny2109/DSTNet-plus/blob/main/figs/DstNetPlus_Manuscript.pdf).
+- **2025.03.14**: This paper is accepted by TPAMI.
+- **2024.01.08**: This repo is created.
 
----
+## 🚀 Quick Started
+### 1. Environment Set Up
+> - Python 3.9, PyTorch == 1.13
+> - BasicSR 1.4.2
+> - Platforms: Ubuntu 18.04, cuda-11
 
-If BasicSR helps your research or work, please help to ⭐ this repo or recommend it to your friends. Thanks😊 <br>
-Other recommended projects:<br>
-▶️ [Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN): A practical algorithm for general image restoration<br>
-▶️ [GFPGAN](https://github.com/TencentARC/GFPGAN): A practical algorithm for real-world face restoration <br>
-▶️ [facexlib](https://github.com/xinntao/facexlib): A collection that provides useful face-relation functions.<br>
-▶️ [HandyView](https://github.com/xinntao/HandyView): A PyQt5-based image viewer that is handy for view and comparison. <br>
-▶️ [HandyFigure](https://github.com/xinntao/HandyFigure): Open source of paper figures <br>
-<sub>([ESRGAN](https://github.com/xinntao/ESRGAN), [EDVR](https://github.com/xinntao/EDVR), [DNI](https://github.com/xinntao/DNI), [SFTGAN](https://github.com/xinntao/SFTGAN))</sub>
-<sub>([HandyCrawler](https://github.com/xinntao/HandyCrawler), [HandyWriting](https://github.com/xinntao/HandyWriting))</sub>
-
----
-
-## ⚡ HOWTOs
-
-We provide simple pipelines to train/test/inference models for a quick start.
-These pipelines/commands cannot cover all the cases and more details are in the following sections.
-
-| GAN                  |                                                |                                                        |          |                                                |                                                        |
-| :------------------- | :--------------------------------------------: | :----------------------------------------------------: | :------- | :--------------------------------------------: | :----------------------------------------------------: |
-| StyleGAN2            | [Train](docs/HOWTOs.md#How-to-train-StyleGAN2) | [Inference](docs/HOWTOs.md#How-to-inference-StyleGAN2) |          |                                                |                                                        |
-| **Face Restoration** |                                                |                                                        |          |                                                |                                                        |
-| DFDNet               |                       -                        |  [Inference](docs/HOWTOs.md#How-to-inference-DFDNet)   |          |                                                |                                                        |
-| **Super Resolution** |                                                |                                                        |          |                                                |                                                        |
-| ESRGAN               |                     *TODO*                     |                         *TODO*                         | SRGAN    |                     *TODO*                     |                         *TODO*                         |
-| EDSR                 |                     *TODO*                     |                         *TODO*                         | SRResNet |                     *TODO*                     |                         *TODO*                         |
-| RCAN                 |                     *TODO*                     |                         *TODO*                         | SwinIR   | [Train](docs/HOWTOs.md#how-to-train-swinir-sr) | [Inference](docs/HOWTOs.md#how-to-inference-swinir-sr) |
-| EDVR                 |                     *TODO*                     |                         *TODO*                         | DUF      |                       -                        |                         *TODO*                         |
-| BasicVSR             |                     *TODO*                     |                         *TODO*                         | TOF      |                       -                        |                         *TODO*                         |
-| **Deblurring**       |                                                |                                                        |          |                                                |                                                        |
-| DeblurGANv2          |                       -                        |                         *TODO*                         |          |                                                |                                                        |
-| **Denoise**          |                                                |                                                        |          |                                                |                                                        |
-| RIDNet               |                       -                        |                         *TODO*                         | CBDNet   |                       -                        |                         *TODO*                         |
-
-## ✨ **Projects that use BasicSR**
-
-- [**Real-ESRGAN**](https://github.com/xinntao/Real-ESRGAN): A practical algorithm for general image restoration
-- [**GFPGAN**](https://github.com/TencentARC/GFPGAN): A practical algorithm for real-world face restoration
-
-If you use `BasicSR` in your open-source projects, welcome to contact me (by [email](#-contact) or opening an issue/pull request). I will add your projects to the above list 😊
-
-## 📜 License and Acknowledgement
-
-This project is released under the [Apache 2.0 license](LICENSE.txt).<br>
-More details about **license** and **acknowledgement** are in [LICENSE](LICENSE/README.md).
-
-## 🌏 Citations
-
-If BasicSR helps your research or work, please cite BasicSR.<br>
-The following is a BibTeX reference. The BibTeX entry requires the `url` LaTeX package.
-
-``` latex
-@misc{basicsr,
-  author =       {Xintao Wang and Liangbin Xie and Ke Yu and Kelvin C.K. Chan and Chen Change Loy and Chao Dong},
-  title =        {{BasicSR}: Open Source Image and Video Restoration Toolbox},
-  howpublished = {\url{https://github.com/XPixelGroup/BasicSR}},
-  year =         {2022}
-}
+```bash
+git clone https://github.com/sunny2109/DSTNet-plus.git
+cd DSTNet-plus
+conda create -n dstnetplus python=3.9
+conda activate dstnetplus
+# Install dependent packages
+pip install -r requirements.txt
+# Install cupy
+# Please make sure that the installed Cupy version matches your existing CUDA installation!
+pip install cupy-cuda11x
+# Install BasicSR
+python setup.py develop
 ```
 
-> Xintao Wang, Liangbin Xie, Ke Yu, Kelvin C.K. Chan, Chen Change Loy and Chao Dong. BasicSR: Open Source Image and Video Restoration Toolbox. <https://github.com/xinntao/BasicSR>, 2022.
+### 2. Download datasets
+Used training and testing sets can be downloaded as follows:
 
-## 📧 Contact
+| Training Set     |  Pretrained model  | Visual Result  |
+| :----------      | :-------------: | :--------------: |
+| [GoPro](http://data.cv.snu.ac.kr:8008/webdav/dataset/GOPRO/GOPRO_Large.zip)                               | [Hugging Face](https://huggingface.co/Meloo/DSTNetPlus/tree/main) \| [Github](https://github.com/sunny2109/DSTNet-plus/releases/tag/v0.1.0) \| [Baidu Cloud](https://pan.baidu.com/s/19RyEG_LupAsfwpKYx-F9cA?pwd=DSTP) | [Hugging Face](https://huggingface.co/Meloo/DSTNetPlus/tree/main) or [Baidu Cloud](https://pan.baidu.com/s/15qSS5Hcsiu0y0-e3zsC3FQ?pwd=DSTP) |
+| [DVD](http://www.cs.ubc.ca/labs/imager/tr/2017/DeepVideoDeblurring/DeepVideoDeblurring_Dataset.zip)       | [Hugging Face](https://huggingface.co/Meloo/DSTNetPlus/tree/main) \| [Github](https://github.com/sunny2109/DSTNet-plus/releases/tag/v0.1.0) \| [Baidu Cloud](https://pan.baidu.com/s/19RyEG_LupAsfwpKYx-F9cA?pwd=DSTP) | [Hugging Face](https://huggingface.co/Meloo/DSTNetPlus/tree/main) or [Baidu Cloud](https://pan.baidu.com/s/15qSS5Hcsiu0y0-e3zsC3FQ?pwd=DSTP) |
+| [BSD](https://drive.google.com/file/d/1VJdyojIAriC5QZp2N_0umEqkIMk1_9HA/view?usp=sharing)                 | [Hugging Face](https://huggingface.co/Meloo/DSTNetPlus/tree/main) \| [Github](https://github.com/sunny2109/DSTNet-plus/releases/tag/v0.1.0) \| [Baidu Cloud](https://pan.baidu.com/s/19RyEG_LupAsfwpKYx-F9cA?pwd=DSTP) | [Hugging Face](https://huggingface.co/Meloo/DSTNetPlus/tree/main) or [Baidu Cloud](https://pan.baidu.com/s/15qSS5Hcsiu0y0-e3zsC3FQ?pwd=DSTP) |
+| [DAVIS-2017](https://data.vision.ee.ethz.ch/csergi/share/davis/DAVIS-2017-Unsupervised-trainval-480p.zip) | [Hugging Face](https://huggingface.co/Meloo/DSTNetPlus/tree/main) \| [Github](https://github.com/sunny2109/DSTNet-plus/releases/tag/v0.1.0) \| [Baidu Cloud](https://pan.baidu.com/s/19RyEG_LupAsfwpKYx-F9cA?pwd=DSTP) | [Hugging Face](https://huggingface.co/Meloo/DSTNetPlus/tree/main) or [Baidu Cloud](https://pan.baidu.com/s/15qSS5Hcsiu0y0-e3zsC3FQ?pwd=DSTP) |
 
-If you have any questions, please email `xintao.alpha@gmail.com`, `xintao.wang@outlook.com`.
 
-<br>
+### 3. Run the training code
+```
+# train DSTNetPlus on GoPro dataset
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 \
+python -m torch.distributed.launch --nproc_per_node=8 --master_port=4321 python basicsr/train.py -opt options/train/train_base_GoPro.yml --launcher pytorch
 
-- **QQ群**: 扫描左边二维码 或者 搜索QQ群号: 320960100   入群答案：互帮互助共同进步
-- **微信群**: 我们的一群已经满500人啦，二群也超过200人了；进群可以添加 Liangbin 的个人微信 (右边二维码)，他会在空闲的时候拉大家入群~
+# train DSTNetPlus on DVD dataset
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 \
+python -m torch.distributed.launch --nproc_per_node=8 --master_port=4321 python basicsr/train.py -opt options/train/train_base_DVD.yml --launcher pytorch
 
+# train DSTNetPlus on BSD dataset
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 \
+python -m torch.distributed.launch --nproc_per_node=8 --master_port=4321 python basicsr/train.py -opt options/train/train_base_BSD1ms.yml --launcher pytorch
+```
+
+### 4. Quick inference
+- Download the pretrained models. 
+
+Please download the pretrained and put it in `./checkpoints/`.
+
+- Download the testing dataset. 
+
+Please download the test dataset and put it in `./datasets/`.
+- Run the following commands:
+```
+python basicsr/test.py -opt options/test/test_base_GoPro.yml
+cd results
+python merge_full.py
+```
+- The test results will be in './results'.
+
+
+## 👀 Results
+We achieve SOTA performance on a set of blurring datasets. Detailed results can be found in the paper. All visual results of DSTNetPlus can be downloaded [here](https://huggingface.co/Meloo/DSTNetPlus/tree/main/visual_results).
+
+<details>
+<summary>Click to expand</summary>
+
+- **Model efficiency** (PSNR vs. Runtime vs. Params) 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/17445847/134879983-6f2d663b-16e7-49f2-97e1-7c53c8a5f71a.jpg"  height="300">  &emsp;
-  <img src="https://user-images.githubusercontent.com/17445847/139572512-8e192aac-00fa-432b-ac8e-a33026b019df.png"  height="300">
+<img width="800" src="figs/runtime.png"> 
 </p>
 
-![visitors](https://visitor-badge.glitch.me/badge?page_id=XPixelGroup/BasicSR) (start from 2022-11-06)
+- **Quantitative evaluations** <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Evaluation on **GoPro** dataset  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Evaluation on **DVD** dataset <br>
+
+<p align="center">
+    <img width="370" src="figs/table_gopro.png"> 
+    <img width="325" src="figs/table_dvd.png"
+</p>
+  
+
+- Quantitative evaluations on the BSD dataset
+<p align="center">
+  <img width="800" src="figs/table_bsd.png">
+</p>
+
+- Quantitative evaluations on the Set8 dataset
+<p align="center">
+  <img width="800" src="figs/table_set8.png">
+</p>
+
+
+- Deblurred results on **GoPro** dataset
+<p align="center">
+<img width="800" src="figs/gopro.png">
+</p>
+
+- Deblurred results on **DVD** dataset
+<p align="center">
+<img width="800" src="figs/dvd.png">
+</p>
+
+- Deblurred results on **Real-world** blurry frames
+<p align="center">
+<img width="800" src="figs/real_world.png">
+</p>
+</details>
+
+## 📧 Contact
+If you have any questions, please feel free to reach us out at cs.longsun@gmail.com
+
+## 📎 Citation 
+
+If you find our work helpful for your research, please consider giving a star ⭐ and citation 📝 
+```bibtex
+@article{DSTNetPlus,
+  title={Learning Efficient Deep Discriminative Spatial and Temporal Networks for Video Deblurring},
+  author={Pan, Jinshan and Sun, Long and Xu Boming and Dong, Jiangxin and Tang, Jinhui},
+  journal={TPAMI},
+  year={2025}
+}
