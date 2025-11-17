@@ -1,4 +1,4 @@
-name: DSTPLus_DVD
+name: DSTNetPlus_Large_Set8_test
 model_type: VideoRecurrentModel
 scale: 1
 num_gpu: 1  # set num_gpu: 0 for cpu mode
@@ -6,26 +6,31 @@ manual_seed: 0
 
 datasets:
   test_1:  # the 1st test dataset
-    name: DVD
+    name: Set8
     type: VideoRecurrentSplitClipsTestDataset
-    dataroot_gt: /data2/DVD/test/gt
-    dataroot_lq: /data2/DVD/test/blur
-    cache_data: False
+    dataroot_gt: dataset/test/set8
+    dataroot_lq: dataset/test/set8
+
+    cache_data: true
     io_backend:
       type: disk
 
-    num_frame: 25
+    sigma: 10
+    num_frame: 20
     num_overlap: 0
 
 # network structures
 network_g:
-  type: Deblurv8
-  num_feat: 64
-  num_block: 15
+  type: DSTNetPlus_Final
+  num_feat: 96
+  num_kernel_block: 5
+  num_block: 25
+  nonblind_denoise: True
+
 
 # path
 path:
-  pretrain_network_g: experiments/DVD.pth
+  pretrain_network_g: experiments/DSTNetPlus_pretrained_model/DSTNetPlus_L_denoise.pth
   strict_load_g: true
 
 # validation settings

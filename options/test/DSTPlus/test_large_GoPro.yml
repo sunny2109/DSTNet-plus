@@ -1,32 +1,33 @@
-name: DSTNetPlus_ablation_wowavelet_bilinear
+name: DSTPlus_Large_GOPR
 model_type: VideoRecurrentModel
 scale: 1
-num_gpu: 2  # set num_gpu: 0 for cpu mode
+num_gpu: 1  # set num_gpu: 0 for cpu mode
 manual_seed: 0
 
 datasets:
   test_1:  # the 1st test dataset
-    name: GOPRO
+    name: GoPro
     type: VideoRecurrentSplitClipsTestDataset
-    dataroot_gt: datasets/GOPRO/test/gt
-    dataroot_lq: datasets/GOPRO/test/blur
-
-    cache_data: false
+    dataroot_gt: dataset/test/GoPro_test/gt
+    dataroot_lq: dataset/test/GoPro_test/blur
+    cache_data: False
     io_backend:
       type: disk
 
-    num_frame: 10
+    num_frame: 50
     num_overlap: 0
 
 # network structures
 network_g:
-  type: DSTNetPlus_woWave
-  num_feat: 64
-  num_block: 15
+  type: DSTNetPlus_Final
+  num_feat: 96
+  num_kernel_block: 5
+  num_block: 25
+  nonblind_denoise: False
 
 # path
 path:
-  pretrain_network_g: experiments/DSTNetPlus_TemporalFusion_ablation_wowavelet_bilinear/models/net_g_latest.pth
+  pretrain_network_g: experiments/DSTNetPlus_pretrained_model/DSTNetPlus_L_gopro.pth
   strict_load_g: true
 
 # validation settingsa

@@ -1,0 +1,122 @@
+# general settings
+# params: 7.9284M; FLOPs: 89.0168G
+name: DSTNetplus_Large_600K_DAVIS
+model_type: VideoRecurrentModel
+scale: 1
+num_gpu: auto  # set num_gpu: 0 for cpu mode
+manual_seed: 66
+
+# dataset and data loader settings
+datasets:
+  train:
+    name: DAVIS
+    type: DAVISRecurrentDataset
+    dataroot_gt: dataset/DAVIS/train
+    dataroot_lq: dataset/DAVIS/train
+    meta_info_file: basicsr/data/meta_info/meta_info_DAVIS_GT.txt
+    test_mode: False
+    io_backend:
+      type: disk
+
+    num_frame: 15
+    gt_size: 256
+    sigma_min: 0
+    sigma_max: 50
+    interval_list: [1]
+    random_reverse: false
+    use_flip: true
+    use_rot: true
+
+    # data loader
+    use_shuffle: true
+    num_worker_per_gpu: 6
+    batch_size_per_gpu: 1
+    dataset_enlarge_ratio: 200
+    prefetch_mode: ~
+
+  val:
+    name: Set8
+    type: VideoRecurrentSplitClipsTestDataset
+    dataroot_gt: dataset/DAVIS/test/set8
+    dataroot_lq: dataset/DAVIS/test/set8
+
+    cache_data: true
+    io_backend:
+      type: disk
+
+    sigma: 30
+    num_frame: 10
+    num_overlap: 0
+    # padding: reflection_circle
+
+# network structures
+network_g:
+  type: DSTNetPlus_Final
+  num_feat: 96
+  num_kernel_block: 5
+  num_block: 25
+  nonblind_denoise: True
+
+# path
+path:
+  pretrain_network_g: ~
+  strict_load_g: true
+  resume_state: ~
+
+# training settings
+train:
+  optim_g:
+    type: AdamW
+    lr: !!float 2e-4
+    weight_decay: !!float 1e-4
+    betas: [0.9, 0.999]
+
+  scheduler:
+    type: CosineAnnealingRestartLR
+    periods: [600000]
+    restart_weights: [1]
+    eta_min: !!float 1e-7
+
+  use_grad_clip: true
+
+  total_iter: 600000
+  warmup_iter: -1  # no warm up
+
+  # losses
+  pixel_opt:
+    type: CharbonnierLoss
+    loss_weight: 1.0
+    reduction: mean
+
+  fft_opt:
+    type: FFT
+    loss_weight: 0.1
+    reduction: mean
+
+# validation settings
+val:
+  val_freq: !!float 1e4
+  flip_seq: false
+  save_img: false
+
+  metrics:
+    psnr: # metric name, can be arbitrary
+      type: calculate_psnr
+      crop_border: 0
+      test_y_channel: false
+
+# logging settings
+logger:
+  print_freq: 100
+  save_checkpoint_freq: 5000
+  use_tb_logger: true
+  # wandb:
+  #   project: ATB_ablation
+  #   resume_id: ~
+
+# dist training settings
+dist_params:
+  backend: nccl
+  port: 29500
+
+find_unused_parameters: true

@@ -10,7 +10,7 @@ from einops import rearrange
 
 @ARCH_REGISTRY.register()
 class DSTNetPlus_Final(nn.Module):
-    def __init__(self, num_feat=96, num_kernel_block=5, num_block=25, nonblind_denoise=True):
+    def __init__(self, num_feat=96, num_kernel_block=5, num_block=25, nonblind_denoise=False):
         super().__init__()
         self.num_feat = num_feat
         self.nonblind_denoise = nonblind_denoise

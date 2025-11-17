@@ -1,18 +1,19 @@
 # general settings
-name: DSTNetPlus_TemporalFusion_ablation_flow
+# params: 3.9027; FLOPs: 44.6148
+name: DSTNetPlus_base_600K_DVD
 model_type: VideoRecurrentModel
 scale: 1
-num_gpu: 2  # set num_gpu: 0 for cpu mode
-manual_seed: 66
+num_gpu: 8  # set num_gpu: 0 for cpu mode
+manual_seed: 0
 
 # dataset and data loader settings
 datasets:
   train:
-    name: GOPRO
-    type: GOPRORecurrentDataset
-    dataroot_gt: datasets/GOPRO/train/gt
-    dataroot_lq: datasets/GOPRO/train/blur
-    meta_info_file_train: ./basicsr/data/meta_info/meta_info_GORPO_GT.txt
+    name: DVD
+    type: DVDRecurrentDataset
+    dataroot_gt: ./dataset/DVD/train/gt
+    dataroot_lq: ./dataset/DVD/train/blur
+    meta_info_file_train: basicsr/data/meta_info/meta_info_DVD_GT.txt
     test_mode: False
     io_backend:
       type: disk
@@ -32,10 +33,10 @@ datasets:
     prefetch_mode: ~
 
   val:
-    name: GOPRO
+    name: DVD
     type: VideoRecurrentSplitClipsTestDataset
-    dataroot_gt: datasets/GOPRO/test/gt
-    dataroot_lq: datasets/GOPRO/test/blur
+    dataroot_gt: ./dataset/DVD/test/gt
+    dataroot_lq: ./dataset/DVD/test/blur
 
     cache_data: false
     io_backend:
@@ -47,8 +48,9 @@ datasets:
 
 # network structures
 network_g:
-  type: DSTNetPlus_Flow
+  type: DSTNetPlus_Final
   num_feat: 64
+  num_kernel_block: 3
   num_block: 15
 
 # path
@@ -67,20 +69,35 @@ train:
 
   scheduler:
     type: CosineAnnealingRestartLR
-    periods: [300000]
+    periods: [600000]
     restart_weights: [1]
     eta_min: !!float 1e-7
 
-  total_iter: 300000
+# train:
+#   optim_g:
+#     type: Adam
+#     lr: !!float 2e-4
+#     weight_decay: 0
+#     betas: [0.9, 0.99]
+
+#   scheduler:
+#     type: CosineAnnealingRestartLR
+#     periods: [300000, 300000]
+#     restart_weights: [1, 0.5]
+#     eta_min: !!float 1e-7
+
+  total_iter: 600000
   warmup_iter: -1  # no warm up
-  fix_flow: 5000
-  flow_lr_mul: 0.125
 
   # losses
   pixel_opt:
     type: CharbonnierLoss
     loss_weight: 1.0
     reduction: mean
+
+#  hem_opt:
+#    type: HEM
+#    loss_weight: 2.0
 
   fft_opt:
     type: FFT
@@ -89,7 +106,7 @@ train:
 
 # validation settings
 val:
-  val_freq: 10000
+  val_freq: 5000
   flip_seq: false
   save_img: false
 
@@ -99,19 +116,14 @@ val:
       crop_border: 0
       test_y_channel: false
 
-    ssim: # metric name, can be arbitrary
-      type: calculate_ssim
-      crop_border: 0
-      test_y_channel: false
-
 # logging settings
 logger:
   print_freq: 500
   save_checkpoint_freq: 5000
   use_tb_logger: true
-  # wandb:
-  #   project: ATB_ablation
-  #   resume_id: ~
+  wandb:
+    project: ATB_ablation
+    resume_id: ~
 
 # dist training settings
 dist_params:

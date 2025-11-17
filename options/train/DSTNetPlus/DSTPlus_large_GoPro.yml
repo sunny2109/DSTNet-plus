@@ -1,9 +1,10 @@
 # general settings
-name: DSTNetPlus_TemporalFusion_ablation_DynConv_singlescale
+# params: 12.4263M; FLOPs: 130.9598G
+name: DSTNetPlus_Large_600K_GoPro
 model_type: VideoRecurrentModel
 scale: 1
-num_gpu: 2  # set num_gpu: 0 for cpu mode
-manual_seed: 66
+num_gpu: 8  # set num_gpu: 0 for cpu mode
+manual_seed: 0
 
 # dataset and data loader settings
 datasets:
@@ -26,8 +27,8 @@ datasets:
 
     # data loader
     use_shuffle: true
-    num_worker_per_gpu: 6
-    batch_size_per_gpu: 2
+    num_worker_per_gpu: 8
+    batch_size_per_gpu: 1
     dataset_enlarge_ratio: 200
     prefetch_mode: ~
 
@@ -47,9 +48,11 @@ datasets:
 
 # network structures
 network_g:
-  type: DSTNetPlus_woDyn
-  num_feat: 64
-  num_block: 15
+  type: DSTNetPlus_Final
+  num_feat: 96
+  num_kernel_block: 5
+  num_block: 25
+  nonblind_denoise: False
 
 # path
 path:
@@ -67,11 +70,13 @@ train:
 
   scheduler:
     type: CosineAnnealingRestartLR
-    periods: [300000]
+    periods: [600000]
     restart_weights: [1]
     eta_min: !!float 1e-7
 
-  total_iter: 300000
+  use_grad_clip: true
+
+  total_iter: 600000
   warmup_iter: -1  # no warm up
 
   # losses
@@ -86,30 +91,25 @@ train:
     reduction: mean
 
 # validation settings
-val:
-  val_freq: 10000
-  flip_seq: false
-  save_img: false
+# val:
+#   val_freq: !!float 1e4
+#   flip_seq: false
+#   save_img: false
 
-  metrics:
-    psnr: # metric name, can be arbitrary
-      type: calculate_psnr
-      crop_border: 0
-      test_y_channel: false
-
-    # ssim: # metric name, can be arbitrary
-    #   type: calculate_ssim
-    #   crop_border: 0
-    #   test_y_channel: false
+#   metrics:
+#     psnr: # metric name, can be arbitrary
+#       type: calculate_psnr
+#       crop_border: 0
+#       test_y_channel: false
 
 # logging settings
 logger:
   print_freq: 500
   save_checkpoint_freq: 5000
   use_tb_logger: true
-  # wandb:
-  #   project: ATB_ablation
-  #   resume_id: ~
+  wandb:
+    project: ~
+    resume_id: ~
 
 # dist training settings
 dist_params:
